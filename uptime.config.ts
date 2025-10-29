@@ -2,18 +2,22 @@ import { MaintenanceConfig, PageConfig, WorkerConfig } from './types/config'
 
 const pageConfig: PageConfig = {
   // Title for your status page
-  title: "lyc8503's Status Page",
+  title: "敬不完美的明天 状态监控",
   // Links shown at the header of your status page, could set `highlight` to `true`
   links: [
-    { link: 'https://github.com/lyc8503', label: 'GitHub' },
-    { link: 'https://blog.lyc8503.net/', label: 'Blog' },
-    { link: 'mailto:me@lyc8503.net', label: 'Email Me', highlight: true },
+    { link: 'https://blog.156234.xyz/', label: 'Blog', highlight: true },
+    { link: 'https://imgconvert.156234.xyz/', label: '赛法利娅图片转换' },
+    { link: 'https://qiuranqaq-video-to-gif-converter.hf.space/', label: '赛法利娅GIF转换' },
+    { link: 'https://jiuguan.156234.xyz/', label: '酒馆' },
+    { link: 'https://cyrene.156234.xyz/ ', label: '昔涟图床' },
+    { link: 'https://ttk.156234.xyz/ ', label: 'Libre影视' },
+    { link: 'https://ttk1.156234.xyz/ ', label: 'Moon影视' }
   ],
   // [OPTIONAL] Group your monitors
   // If not specified, all monitors will be shown in a single list
   // If specified, monitors will be grouped and ordered, not-listed monitors will be invisble (but still monitored)
   group: {
-    '🌐 Public (example group name)': ['foo_monitor', 'bar_monitor', 'more monitor ids...'],
+    '🌐 Public (example group name)': ['Worker', 'Snippets', 'Program'],
     '🔐 Private': ['test_tcp_monitor'],
   },
   // [OPTIONAL] Set the path to your favicon, default to '/favicon.ico' if not specified
@@ -36,17 +40,17 @@ const workerConfig: WorkerConfig = {
     // Example HTTP Monitor
     {
       // `id` should be unique, history will be kept if the `id` remains constant
-      id: 'foo_monitor',
+      id: 'Worker',
       // `name` is used at status page and callback message
-      name: 'My API Monitor',
+      name: 'Worker本体',
       // `method` should be a valid HTTP Method
-      method: 'POST',
+      method: 'GET',
       // `target` is a valid URL
-      target: 'https://example.com',
+      target: 'https://aedeselysiae.156234.xyz/',
       // [OPTIONAL] `tooltip` is ONLY used at status page to show a tooltip
-      tooltip: 'This is a tooltip for this monitor',
+      tooltip: '翁法罗斯最初的版本',
       // [OPTIONAL] `statusPageLink` is ONLY used for clickable link at status page
-      statusPageLink: 'https://example.com',
+      statusPageLink: 'https://aedeselysiae.156234.xyz',
       // [OPTIONAL] `hideLatencyChart` will hide status page latency chart if set to true
       hideLatencyChart: false,
       // [OPTIONAL] `expectedCodes` is an array of acceptable HTTP response codes, if not specified, default to 2xx
@@ -55,23 +59,25 @@ const workerConfig: WorkerConfig = {
       timeout: 10000,
       // [OPTIONAL] headers to be sent
       headers: {
-        'User-Agent': 'Uptimeflare',
-        Authorization: 'Bearer YOUR_TOKEN_HERE',
+        'User-Agent': 'Mozilla/5.0 (Windows NT 10.0; Win32; x86) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/99.0.7113.93 Safari/537.36',
+        //Authorization: 'Bearer YOUR_TOKEN_HERE',
       },
       // [OPTIONAL] body to be sent
-      body: 'Hello, world!',
+      //body: 'Hello, world!',
       // [OPTIONAL] if specified, the response must contains the keyword to be considered as operational.
-      responseKeyword: 'success',
+      responseKeyword: 'Welcome to nginx!',
       // [OPTIONAL] if specified, the response must NOT contains the keyword to be considered as operational.
-      responseForbiddenKeyword: 'bad gateway',
+      responseForbiddenKeyword: '1101',
       // [OPTIONAL] if specified, will call the check proxy to check the monitor, mainly for geo-specific checks
       // refer to docs https://github.com/lyc8503/UptimeFlare/wiki/Check-proxy-setup before setting this value
       // currently supports `worker://` and `http(s)://` proxies
-      checkProxy: 'https://xxx.example.com OR worker://weur',
+      //checkProxy: 'https://xxx.example.com OR worker://weur',
       // [OPTIONAL] if true, the check will fallback to local if the specified proxy is down
-      checkProxyFallback: true,
+      //checkProxyFallback: true,
     },
+
     // Example TCP Monitor
+  /* 
     {
       id: 'test_tcp_monitor',
       name: 'Example TCP Monitor',
@@ -84,6 +90,8 @@ const workerConfig: WorkerConfig = {
       timeout: 5000,
     },
   ],
+  
+
   // [Optional] Notification settings
   notification: {
     // [Optional] Notification webhook settings, if not specified, no notification will be sent
@@ -147,7 +155,7 @@ const workerConfig: WorkerConfig = {
     },
   },
 }
-
+*/
 // You can define multiple maintenances here
 // During maintenance, an alert will be shown at status page
 // Also, related downtime notifications will be skipped (if any)
@@ -156,7 +164,7 @@ const workerConfig: WorkerConfig = {
 const maintenances: MaintenanceConfig[] = [
   {
     // [Optional] Monitor IDs to be affected by this maintenance
-    monitors: ['foo_monitor', 'bar_monitor'],
+    monitors: ['Worker', 'Snippets', 'Program'],
     // [Optional] default to "Scheduled Maintenance" if not specified
     title: 'Test Maintenance',
     // Description of the maintenance, will be shown at status page
